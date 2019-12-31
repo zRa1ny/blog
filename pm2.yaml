@@ -1,0 +1,13 @@
+# pm2.yaml
+apps:
+  - name: 'app'                # 程序名称
+    script: ./server.js        # 入口文件
+    watch: true
+    env:                       # 生产环境变量
+      NODE_ENV: 'production'
+      version: 1.0.1
+      PORT: 3000
+    env_dev:                   # 开发环境变量
+      NODE_ENV: 'development'
+      PORT: 3002
+      version: 1.0.1
